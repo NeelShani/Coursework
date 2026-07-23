@@ -1,0 +1,36 @@
+"Workout Tracking Platform"
+
+1. This tracking platform will allow users to select their workouts, track progress and share their activities with friends on the same platform. The system will have the personalized workout recommendations based on the user's fitness goals and activities.
+
+
+2. Description
+
+Each users/participants with their login system can track the progress in workout and weight. They can share the weekly, monthly and yearly reports with the other users/friends. They can give access to another user to view their profile as a visitor, which may help their trainer of the user to know the details and friends to push each other.
+
+
+3. Functional Requirements
+
+- Registration and Login of the User: Registration in order to create an account and log in to access it.
+- User's Profile Management: User can update their profile which includes their fitness goals or weight goals.
+- Workout selection: User can select their workout/exercise with reps, sets and timing according to the workout.
+- Activities/tracking: Where user can track their activities in the graph format.
+- Buddy's feed: User can share their progress with their friends/trainer and even give them access to view daily details without sharing.
+- Recommendations system: Users receive workout suggestions based on their goals and past activities. 
+
+
+4. Database Systems
+
+- User Profile and goals - PostgreSQL
+To manage user data and goals, the relational schema is the best choice as the relation between them as can be easily queried.
+
+- Workout logs and stats - MongoDB
+ The format of workout can vary with the profile, which can be unstructured or semi-structured, and MongoDB is the best option for it.
+
+- Workout tracking/history - Cassandra
+The tracking of workouts is the time-series data and should be stored long-term. As users log workouts over time, Cassandra efficiently handles large amounts of data, providing fast write and read capabilities for time-based queries.
+
+- Frequent workout data(Cashing) - Redis
+To access frequently repeated workout data, which may reduce the speed of other databases, Redis is used for Cashing those data.
+ 
+- Workout Recommendations - Neo4j
+Using the graph structure, Neo4j is a better option to suggest relevant workouts to the user according to the goal.
